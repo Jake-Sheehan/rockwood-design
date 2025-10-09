@@ -1,0 +1,17 @@
+:root {
+    /* card */
+    --padding-card: var(--padding-sm);
+    --shadow-nav: var(--shadow-xl);
+}
+
+html.light {
+    /* Card */
+    --color-surface-card: var(--color-white);
+    --shadow-card: var(--shadow-2xl);
+}
+
+html.dark {
+    /* Card */
+    --shadow-card: var(--shadow-dark-2xl);
+    --color-surface-card: var(--color-neutral-800);
+}

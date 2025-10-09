@@ -1,0 +1,57 @@
+---
+import Sun from 'phosphor-astro/Sun.astro';
+import Moon from 'phosphor-astro/Moon.astro';
+---
+
+<script>
+    import { theme, toggleTheme } from '../store.ts';
+
+    const button = document.getElementById('switch');
+    button?.addEventListener('click', () => {
+        toggleTheme();
+    });
+
+    theme.subscribe((current) => {
+        const sun = document.getElementById('sun');
+        const moon = document.getElementById('moon');
+        if (!sun || !moon) {
+            console.error('sun or moon not found');
+            return;
+        }
+        if (current === 'light') {
+            sun.classList.remove('hidden');
+            moon.classList.add('hidden');
+        } else {
+            sun.classList.add('hidden');
+            moon.classList.remove('hidden');
+        }
+    });
+</script>
+
+<button id="switch">
+    <Sun id="sun" class="sun icon hidden" />
+    <Moon id="moon" class="moon icon hidden" />
+</button>
+
+<style>
+    button {
+        --size: 24px;
+        width: var(--size);
+        height: var(--size);
+        border: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+    }
+
+    .icon {
+        width: 100%;
+        color: var(--color-text-primary);
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>

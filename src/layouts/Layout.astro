@@ -1,0 +1,92 @@
+---
+// fonts - MUST BE FIRST
+import '@fontsource/roboto';
+import '@fontsource-variable/inter';
+
+// global styles - MUST BE SECOND
+import '../styles/global.css';
+
+// components
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<script>
+    import { theme } from '../store.ts';
+    theme.subscribe((current) => {
+        const app = document.getElementById('app');
+        app?.classList.remove('light', 'dark');
+        app?.classList.add(current);
+    });
+</script>
+
+<html id="app" lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+
+    <body>
+        <a class="skip-to-main" href="#main">skip to main</a>
+        <Header />
+        <main id="main">
+            <slot />
+        </main>
+        <Footer />
+    </body>
+</html>
+
+<style>
+    body {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'header'
+            'main'
+            'footer';
+    }
+
+    .skip-to-main {
+        &:not(:focus) {
+            clip: rect(0 0 0 0);
+            clip-path: inset(50%);
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+        }
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+        padding: 1rem;
+        background-color: var(--color-surface-inverted);
+        text-decoration: none;
+        border-bottom-right-radius: var(--rounded-sm);
+        text-transform: uppercase;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+</style>

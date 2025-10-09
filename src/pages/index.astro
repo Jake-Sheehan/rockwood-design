@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrimaryCard from '@components/cards/PrimaryCard.astro';
+import HeroHeading from '@components/headings/HeroHeading.astro';
+---
+
+<Layout title="Home">
+    <section id="hero-section" class="hero-section section wrapper">
+        <HeroHeading title="Hero Title" />
+        <p>
+            Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti velit
+            nascetur vehicula mi eros bibendum magnis vivamus ullamcorper.
+            Vulputate mauris turpis facilisi; auctor mollis magnis luctus
+            tincidunt magnis. Aliquet habitant non augue; placerat senectus
+            dictumst luctus. Venenatis cursus fames phasellus consequat torquent
+            justo velit. Venenatis lectus proin aliquam viverra dictumst
+            nascetur. Himenaeos quisque vitae nunc felis hendrerit maecenas.
+            Montes ipsum arcu arcu maecenas turpis aptent tristique mi curae.
+            Tristique amet euismod volutpat nam pharetra risus rhoncus posuere.
+        </p>
+    </section>
+
+    <section class="section wrapper cards">
+        <PrimaryCard>
+            <img src="https://picsum.photos/350/250" alt="test" />
+            <div class="card-content">
+                <h3>card</h3>
+                <p>paragraph</p>
+            </div>
+        </PrimaryCard>
+
+        <PrimaryCard>
+            <img src="https://picsum.photos/350/250" alt="test" />
+            <div class="card-content">
+                <h3>card</h3>
+                <p>paragraph</p>
+            </div>
+        </PrimaryCard>
+
+        <PrimaryCard>
+            <img src="https://picsum.photos/350/250" alt="test" />
+            <div class="card-content">
+                <h3>card</h3>
+                <p>paragraph</p>
+            </div>
+        </PrimaryCard>
+    </section>
+</Layout>
+
+<style>
+    .hero-section {
+        background: url('https://picsum.photos/1920/1080'), rgb(0 0 0 / 60%);
+        background-blend-mode: overlay;
+        background-size: cover;
+        background-position: center;
+        p {
+            color: var(--color-text-light);
+        }
+
+        @media (width > 1200px) {
+            border-radius: var(--rounded-lg);
+        }
+    }
+
+    .cards {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+
+        img {
+            border-top-left-radius: var(--rounded-lg);
+            border-top-right-radius: var(--rounded-lg);
+        }
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+</style>

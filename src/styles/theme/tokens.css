@@ -1,0 +1,89 @@
+:root {
+    /*
+     * FONT
+     * */
+
+    /* font family */
+    --ff-base: var(--font-roboto);
+    --ff-heading: var(--font-helvetica);
+
+    /* font size */
+    --fs-title-large: var(--fs-1000);
+    --fs-title: var(--fs-900);
+    --fs-section-heading: var(--fs-800);
+    --fs-heading: var(--fs-700);
+    --fs-body-large: var(--fs-600);
+    --fs-body-medium: var(--fs-500);
+    --fs-body-regular: var(--fs-400);
+    --fs-body-small: var(--fs-300);
+
+    /*
+     * SIZE
+     * */
+
+    /* border radius */
+    --rounded-none: var(--radius-none);
+    --rounded-sm: var(--radius-xs);
+    --rounded: var(--radius-sm);
+    --rounded-md: var(--radius-md);
+    --rounded-lg: var(--radius-lg);
+    --rounded-full: var(--radius-full);
+
+    /* color */
+    --color-surface-success: var(--color-green-500);
+    --color-surface-failure: var(--color-red-500);
+    --color-text-light: var(--color-neutral-50);
+    --color-text-dark: var(--color-neutral-900);
+}
+
+/* Light Theme */
+html.light {
+    /*
+     * COLOR
+     * */
+
+    /* text */
+    --color-text-heading: var(--color-neutral-950);
+    --color-text-primary: var(--color-neutral-900);
+    --color-text-secondary: var(--color-secondary);
+    --color-text-brand: var(--color-primary);
+    --color-text-muted: var(--color-neutral-300);
+    --color-text-highlight: var(--color-tertiary);
+    --color-text-link: var(--color-neutral-900);
+    --color-text-inverted: var(--color-neutral-50);
+
+    /* surface */
+    --color-surface-primary: var(--color-neutral-50);
+    --color-surface-secondary: var(--color-secondary);
+    --color-surface-brand: var(--color-primary);
+    --color-surface-inverted: var(--color-neutral-900);
+
+    /* border */
+    --color-border: var(--color-neutral-300);
+}
+
+/* Dark Theme */
+html.dark {
+    /*
+     * COLOR
+     * */
+
+    /* text */
+    --color-text-heading: var(--color-neutral-50);
+    --color-text-primary: var(--color-neutral-100);
+    --color-text-secondary: var(--color-secondary);
+    --color-text-brand: var(--color-primary);
+    --color-text-muted: var(--color-neutral-400);
+    --color-text-highlight: var(--color-tertiary);
+    --color-text-link: var(--color-neutral-100);
+    --color-text-inverted: var(--color-neutral-900);
+
+    /* surface */
+    --color-surface-primary: var(--color-neutral-900);
+    --color-surface-secondary: var(--color-secondary);
+    --color-surface-brand: var(--color-primary);
+    --color-surface-inverted: var(--color-neutral-100);
+
+    /* border */
+    --color-border: var(--color-neutral-700);
+}

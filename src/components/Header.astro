@@ -1,0 +1,162 @@
+---
+import ThemeSwitcher from '@components/ThemeSwitcher.astro';
+import HamburgerMenu from '@components/svg/hamburger.astro';
+import logoUrl from '@assets/logoipsum.svg?url';
+---
+
+<script>
+    const wireButton = () => {
+        const menuButton = document.querySelector('[aria-controls="nav"]');
+        if (!menuButton) {
+            throw new ReferenceError('Menu button not found');
+        }
+
+        // add click listrener to open and close menu
+        menuButton.addEventListener('click', (_event) => {
+            menuButton.setAttribute(
+                'aria-expanded',
+                menuButton.getAttribute('aria-expanded') === 'true'
+                    ? 'false'
+                    : 'true'
+            );
+        });
+
+        // close menu on click outside
+        document.addEventListener('click', (event) => {
+            if (event.target !== menuButton) {
+                menuButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+    };
+
+    try {
+        wireButton();
+    } catch (error) {
+        if (error instanceof ReferenceError) {
+            console.error(error.message);
+        }
+    }
+</script>
+
+<header class="primary-header">
+    <img src={logoUrl} alt="logo" />
+
+    <button aria-controls="nav" aria-expanded="false">
+        <span class="visually-hidden">menu</span>
+        <HamburgerMenu />
+    </button>
+    <nav id="nav" class="nav">
+        <ul role="list">
+            <li>
+                <a href="/">home</a>
+            </li>
+            <li>
+                <a href="/about">about</a>
+            </li>
+            <li>
+                <a href="/contact">contact</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="theme-switcher">
+        <ThemeSwitcher />
+    </div>
+</header>
+
+<style>
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        grid-template-rows: auto;
+        align-items: center;
+        grid-template-areas: 'logo nav theme';
+        gap: 1rem;
+        padding: 1rem 2rem;
+        width: 100%;
+        position: relative;
+    }
+
+    img {
+        grid-area: logo;
+    }
+
+    button[aria-controls='nav'] {
+        --icon-size: 24px;
+        height: var(--icon-size);
+        width: var(--icon-size);
+        grid-area: nav;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 0;
+
+        display: none;
+        @media (width < 760px) {
+            display: block;
+        }
+    }
+
+    nav {
+        grid-area: nav;
+        display: grid;
+        place-items: center;
+        font-family: var(--ff-heading);
+        text-transform: uppercase;
+        font-weight: bold;
+
+        ul {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            @media (width < 760px) {
+                flex-flow: column nowrap;
+            }
+        }
+
+        /* Styles for dropdown nav */
+        @media (width < 760px) {
+            display: none;
+            grid-area: auto;
+            background-color: var(--color-surface-primary);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-nav);
+            z-index: 1000;
+            padding: 2rem;
+            border-bottom-left-radius: var(--rounded);
+            border-bottom-right-radius: var(--rounded);
+            position: absolute;
+            top: 100%;
+            right: 10px;
+
+            ul {
+                gap: 0;
+            }
+
+            li {
+                width: 100%;
+            }
+
+            li:not(:first-child) {
+                --gap-space: 1.5rem;
+                margin-block-start: var(--gap-space);
+                padding-block-start: var(--gap-space);
+                border-top: 2px solid var(--color-border);
+            }
+
+            button[aria-controls='nav'][aria-expanded='true'] ~ & {
+                display: block;
+            }
+        }
+    }
+
+    .theme-switcher {
+        grid-area: theme;
+    }
+
+    a {
+        text-decoration: none;
+    }
+</style>

@@ -1,0 +1,16 @@
+<div class="card">
+    <slot />
+</div>
+
+<style>
+    .card {
+        /* give card min height and width so it is visible with no content */
+        min-block-size: 10px;
+        min-inline-size: 10px;
+        display: inline-block;
+        /* styles */
+        background-color: var(--color-surface-card);
+        box-shadow: var(--shadow-card);
+        border-radius: var(--rounded-lg);
+    }
+</style>

@@ -1,0 +1,70 @@
+---
+export const prerender = false;
+
+import Layout from '@layouts/Layout.astro';
+import ContactForm from '@components/ContactForm.astro';
+import PrimaryCard from '@components/cards/PrimaryCard.astro';
+
+let formSubmitted: boolean = false;
+let resultMessage;
+
+if (Astro.request.method === 'POST') {
+    formSubmitted = true;
+    try {
+        const formData = await Astro.request.formData();
+        const firstName = formData.get('firstname');
+        const lastName = formData.get('lastname');
+        const email = formData.get('email');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
+
+        console.log(`Sent by: ${email}`);
+        console.log(`subject: ${subject}`);
+        console.log(`${firstName} ${lastName}`);
+        console.log(message);
+
+        resultMessage = 'form successfully submitted';
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error(error.message);
+            resultMessage = 'oops, something went wrong';
+        }
+    }
+}
+---
+
+<Layout title="Contact">
+    <section class="section wrapper">
+        <div class="text">
+            <h1>Contact Us</h1>
+            <p>
+                Lorem ipsum odor amet, consectetuer adipiscing elit. Ex eros
+                potenti vel tortor erat primis. Primis sed posuere vivamus
+                efficitur ligula facilisi aenean sit? Sociosqu quis rutrum nisi
+                etiam purus ligula. Velit ac fringilla litora integer vehicula
+                sociosqu. Malesuada nullam lorem aliquam ligula eu parturient.
+                Fusce scelerisque neque enim molestie senectus sollicitudin
+                phasellus. Phasellus aptent metus donec nunc sit lectus
+                imperdiet arcu scelerisque. Donec quisque accumsan lectus, lorem
+                vestibulum ac ad.
+            </p>
+        </div>
+        <PrimaryCard>
+            {formSubmitted ? <p>{resultMessage}</p> : <ContactForm />}
+        </PrimaryCard>
+    </section>
+</Layout>
+
+<style>
+    section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        justify-items: center;
+        align-items: center;
+
+        @media (width > 760px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>

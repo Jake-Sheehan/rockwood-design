@@ -1,0 +1,48 @@
+/* Prose */
+/* same as :not(:first-child) but with no specificity */
+/* not needed if set in reset */
+.prose > * + * {
+    --flow-space: 1em;
+    margin-top: var(--flow-space, 1em);
+}
+
+/* Section spacing */
+section.section {
+    --padding-block: var(--padding-xl);
+    padding-block: var(--padding-block);
+
+    @media (width > 760px) {
+        --padding-block: var(--padding-2xl);
+    }
+
+    &[data-padding='narrow'] {
+        --padding-block: var(--padding-md);
+
+        @media (width > 760px) {
+            --padding-block: var(--padding-xl);
+        }
+    }
+}
+
+/* Wrapper approach */
+.wrapper {
+    --wrapper-width: 1200px;
+    --wrapper-padding: var(--padding-md);
+    max-width: calc(var(--wrapper-width) + (var(--wrapper-padding) * 2));
+    margin-inline: auto;
+    padding-inline: var(--wrapper-padding);
+
+    &[data-width='narrow'] {
+        --wrapper-width: 800px;
+    }
+
+    &[data-width='wide'] {
+        --wrapper-width: 1400px;
+    }
+
+    &[data-width='full'] {
+        --wrapper-width: 100%;
+    }
+}
+
+/* Grid approach */

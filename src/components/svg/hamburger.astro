@@ -1,0 +1,75 @@
+---
+const view_box = 5;
+const view_box_px = `${view_box}px`;
+const stroke_width = 1;
+const stroke_width_px = `${stroke_width}px`;
+const duration = '300ms';
+---
+
+<svg class="open" viewBox=`0 0 ${view_box} ${view_box}`>
+    <line
+        class="top"
+        x1="0"
+        y1=`${stroke_width / 2}`
+        x2=`${view_box}`
+        y2=`${stroke_width / 2}`
+        stroke="currentColor"
+        stroke-width=`${stroke_width}`></line>
+    <line
+        class="middle"
+        x1="0"
+        y1=`${view_box / 2}`
+        x2=`${view_box}`
+        y2=`${view_box / 2}`
+        stroke="currentColor"
+        stroke-width=`${stroke_width}`></line>
+    <line
+        class="bottom"
+        x1="0"
+        y1=`${view_box - (stroke_width / 2)}`
+        x2=`${view_box}`
+        y2=`${view_box - (stroke_width / 2)}`
+        stroke="currentColor"
+        stroke-width=`${stroke_width}`></line>
+</svg>
+
+<style define:vars={{ view_box_px, stroke_width_px, duration }}>
+    svg {
+        color: var(--color-text-primary);
+        cursor: pointer;
+        transition: all var(--duration);
+        pointer-events: none;
+    }
+
+    svg * {
+        transition: all var(--duration);
+    }
+
+    .top {
+        transform-origin: calc(var(--view_box_px) / 2)
+            calc(var(--stroke_width_px) / 2);
+    }
+
+    .bottom {
+        transform-origin: calc(var(--view_box_px) / 2)
+            calc(var(--view_box_px) - (var(--stroke_width_px) / 2));
+    }
+
+    :global(button[aria-expanded='true']) line.top {
+        transform: translateY(
+                calc((var(--view_box_px) / 2) - (var(--stroke_width_px) / 2))
+            )
+            rotate(45deg);
+    }
+
+    :global(button[aria-expanded='true']) line.middle {
+        opacity: 0;
+    }
+
+    :global(button[aria-expanded='true']) line.bottom {
+        transform: translateY(
+                calc((var(--view_box_px) / 2 - var(--stroke_width_px) / 2) * -1)
+            )
+            rotate(-45deg);
+    }
+</style>
