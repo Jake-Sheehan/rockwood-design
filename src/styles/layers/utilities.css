@@ -11,3 +11,21 @@
     white-space: nowrap;
     width: 1px;
 }
+
+.gradient-overlay {
+    position: relative;
+    display: inline-block; /* or block, depending on layout */
+}
+
+.gradient-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgb(var(--color-surface-overlay) / 0) 50%,
+        rgb(var(--color-surface-overlay) / 1) 100%
+    );
+    pointer-events: none; /* lets you still click the image */
+    z-index: 10;
+}

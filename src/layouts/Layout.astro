@@ -17,15 +17,6 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<script>
-    import { theme } from '../store.ts';
-    theme.subscribe((current) => {
-        const app = document.getElementById('app');
-        app?.classList.remove('light', 'dark');
-        app?.classList.add(current);
-    });
-</script>
-
 <html id="app" lang="en">
     <head>
         <meta charset="UTF-8" />

@@ -1,5 +1,4 @@
 ---
-import ThemeSwitcher from '@components/ThemeSwitcher.astro';
 import HamburgerMenu from '@components/svg/hamburger.astro';
 import logoUrl from '@assets/logoipsum.svg?url';
 ---
@@ -67,18 +66,15 @@ import logoUrl from '@assets/logoipsum.svg?url';
             </li>
         </ul>
     </nav>
-    <div class="theme-switcher">
-        <ThemeSwitcher />
-    </div>
 </header>
 
 <style>
     header {
         display: grid;
-        grid-template-columns: 1fr auto auto;
+        grid-template-columns: 1fr auto;
         grid-template-rows: auto;
         align-items: center;
-        grid-template-areas: 'logo nav theme';
+        grid-template-areas: 'logo nav';
         gap: 1rem;
         padding: 1rem 2rem;
         width: 100%;
@@ -159,10 +155,6 @@ import logoUrl from '@assets/logoipsum.svg?url';
                 display: block;
             }
         }
-    }
-
-    .theme-switcher {
-        grid-area: theme;
     }
 
     a {

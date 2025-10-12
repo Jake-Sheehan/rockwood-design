@@ -13,6 +13,7 @@ export default function ProjectSwiper({
         title: string;
         description: string;
         imageUrl: string;
+        url: string;
     }[];
 }) {
     const swiperRef = useRef<SwiperInstance | null>(null);
@@ -62,6 +63,7 @@ export default function ProjectSwiper({
                     {projects[activeIndex]?.description ??
                         `Slide ${activeIndex + 1}`}
                 </p>
+                <a href={`/projects/${projects[activeIndex].url}`}>link</a>
                 <button onClick={goToNextSlide}>Next</button>
             </div>
         </div>

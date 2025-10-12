@@ -1,9 +1,8 @@
-@layer primitives, brand, tokens, components, reset, base, layout, utilities;
+@layer primitives, brand, tokens, reset, base, layout, utilities;
 
 @import url('./theme/primitives.css') layer(primitives);
 @import url('./theme/brand.css') layer(brand);
 @import url('./theme/tokens.css') layer(tokens);
-@import url('./theme/components.css') layer(components);
 @import url('./layers/reset.css') layer(reset);
 @import url('./layers/base.css') layer(base);
 @import url('./layers/layout.css') layer(layout);

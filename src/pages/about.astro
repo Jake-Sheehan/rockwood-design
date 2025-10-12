@@ -1,8 +1,25 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import PageHero from '@components/PageHero.astro';
 ---
 
 <Layout title="About">
+    <PageHero
+        imageUrl="https://picsum.photos/1920/1080?random=2"
+        title="About Us"
+    >
+        <p>
+            Rockwood Design, Inc. is a premier residential design firm with over
+            35 years of hands-on experience in crafting distinctive and
+            inspiring living spaces. We are committed to delivering precise,
+            builder-friendly plans while expertly navigating complex zoning and
+            conservation regulations. Our extensive industry expertise, combined
+            with cutting-edge technology and a comprehensive design library,
+            ensures a seamless, efficient, and enjoyable experience for every
+            homeowner.
+        </p>
+    </PageHero>
+
     <section class="section wrapper">
         <h1>about</h1>
         <p>

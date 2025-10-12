@@ -29,45 +29,12 @@
     --rounded-lg: var(--radius-lg);
     --rounded-full: var(--radius-full);
 
+    /*
+    * padding 
+    */
+    --padding-card: var(--padding-sm);
+
     /* color */
-    --color-surface-success: var(--color-green-500);
-    --color-surface-failure: var(--color-red-500);
-    --color-text-light: var(--color-neutral-50);
-    --color-text-dark: var(--color-neutral-900);
-}
-
-/* Light Theme */
-html.light {
-    /*
-     * COLOR
-     * */
-
-    /* text */
-    --color-text-heading: var(--color-neutral-950);
-    --color-text-primary: var(--color-neutral-900);
-    --color-text-secondary: var(--color-secondary);
-    --color-text-brand: var(--color-primary);
-    --color-text-muted: var(--color-neutral-300);
-    --color-text-highlight: var(--color-tertiary);
-    --color-text-link: var(--color-neutral-900);
-    --color-text-inverted: var(--color-neutral-50);
-
-    /* surface */
-    --color-surface-primary: var(--color-neutral-50);
-    --color-surface-secondary: var(--color-secondary);
-    --color-surface-brand: var(--color-primary);
-    --color-surface-inverted: var(--color-neutral-900);
-
-    /* border */
-    --color-border: var(--color-neutral-300);
-}
-
-/* Dark Theme */
-html.dark {
-    /*
-     * COLOR
-     * */
-
     /* text */
     --color-text-heading: var(--color-neutral-50);
     --color-text-primary: var(--color-neutral-100);
@@ -77,13 +44,26 @@ html.dark {
     --color-text-highlight: var(--color-tertiary);
     --color-text-link: var(--color-neutral-100);
     --color-text-inverted: var(--color-neutral-900);
+    --color-text-light: var(--color-neutral-50);
+    --color-text-dark: var(--color-neutral-900);
 
     /* surface */
     --color-surface-primary: var(--color-neutral-900);
+    --color-surface-overlay: 23 23 23;
     --color-surface-secondary: var(--color-secondary);
+    --color-surface-card: var(--color-gray-800);
     --color-surface-brand: var(--color-primary);
     --color-surface-inverted: var(--color-neutral-100);
+    --color-surface-success: var(--color-green-500);
+    --color-surface-failure: var(--color-red-500);
+    --color-surface-opaque: var(--opaque);
 
     /* border */
     --color-border: var(--color-neutral-700);
+
+    /*
+    * shadows
+    */
+    --shadow-nav: var(--shadow-xl);
+    --shadow-card: var(--shadow-dark-2xl);
 }

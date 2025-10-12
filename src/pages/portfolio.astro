@@ -1,9 +1,23 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import Grid from '@components/Grid.astro';
+import ProjectThumb from '@components/ProjectThumb.astro';
+import projects from '../mockProjects.json';
 ---
 
 <Layout title="Portfolio">
     <section class="section wrapper">
-        <h1>portfolio</h1>
+        <h2>Explore Our Projects</h2>
+        <Grid>
+            {
+                projects.map((project) => (
+                    <ProjectThumb
+                        imageSrc={project.imageUrl}
+                        title={project.title}
+                        url={project.url}
+                    />
+                ))
+            }
+        </Grid>
     </section>
 </Layout>

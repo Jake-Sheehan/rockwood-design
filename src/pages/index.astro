@@ -1,13 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import PrimaryCard from '@components/cards/PrimaryCard.astro';
-import HeroHeading from '@components/headings/HeroHeading.astro';
 import ProjectSwiper from '@components/ProjectSwiper';
 import projects from '../mockProjects.json';
 ---
 
 <Layout title="Home">
-    <section id="hero-section" class="hero-section section">
+    <section id="hero-section" class="hero-section section wrapper">
         <ProjectSwiper projects={projects} client:load />
     </section>
 

@@ -1,0 +1,33 @@
+---
+interface Props {
+    title: string;
+    imageSrc: string;
+    url: string;
+}
+
+const { title, imageSrc, url } = Astro.props;
+---
+
+<a href={`/projects/${url}`} class="thumb">
+    <img src={imageSrc} />
+    <div class="title">
+        <h4>{title}</h4>
+    </div>
+</a>
+
+<style>
+    .thumb {
+        border-radius: var(--rounded);
+        background-color: var(--color-surface-card);
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--rounded);
+    }
+
+    .title {
+        padding: 1rem;
+    }
+</style>
