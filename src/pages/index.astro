@@ -2,11 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import PrimaryCard from '@components/cards/PrimaryCard.astro';
 import HeroHeading from '@components/headings/HeroHeading.astro';
+import ProjectSwiper from '@components/ProjectSwiper';
+import projects from '../mockProjects.json';
 ---
 
 <Layout title="Home">
-    <section id="hero-section" class="hero-section section wrapper">
-        <HeroHeading title="Rockwood Design" />
+    <section id="hero-section" class="hero-section section">
+        <ProjectSwiper projects={projects} client:load />
     </section>
 
     <section class="section wrapper">
@@ -23,17 +25,7 @@ import HeroHeading from '@components/headings/HeroHeading.astro';
 
 <style>
     .hero-section {
-        background: url('https://picsum.photos/1920/1080'), rgb(0 0 0 / 60%);
-        background-blend-mode: overlay;
-        background-size: cover;
-        background-position: center;
-        p {
-            color: var(--color-text-light);
-        }
-
-        @media (width > 1200px) {
-            border-radius: var(--rounded-lg);
-        }
+        height: 100dvh;
     }
 
     .cards {

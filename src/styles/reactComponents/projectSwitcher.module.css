@@ -1,0 +1,11 @@
+.projectSwitcher {
+    height: 100%;
+    width: 100%;
+}
+
+.myControls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
