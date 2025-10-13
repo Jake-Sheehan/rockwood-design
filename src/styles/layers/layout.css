@@ -24,6 +24,23 @@ section.section {
     }
 }
 
+section.hero-section {
+    --padding-block: var(--padding-xl);
+    padding-bottom: var(--padding-block);
+
+    @media (width > 760px) {
+        --padding-block: var(--padding-2xl);
+    }
+
+    &[data-padding='narrow'] {
+        --padding-block: var(--padding-md);
+
+        @media (width > 760px) {
+            --padding-block: var(--padding-xl);
+        }
+    }
+}
+
 /* Wrapper approach */
 .wrapper {
     --wrapper-width: 1200px;

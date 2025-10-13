@@ -5,9 +5,7 @@ import projects from '../mockProjects.json';
 ---
 
 <Layout title="Home">
-    <section id="hero-section" class="hero-section section wrapper">
-        <ProjectSwiper projects={projects} client:load />
-    </section>
+    <ProjectSwiper projects={projects} client:load />
 
     <section class="section wrapper">
         <h2>Trusted for over 35 years</h2>
@@ -21,25 +19,4 @@ import projects from '../mockProjects.json';
     </section>
 </Layout>
 
-<style>
-    .hero-section {
-        height: 100dvh;
-    }
-
-    .cards {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 2rem;
-
-        img {
-            border-top-left-radius: var(--rounded-lg);
-            border-top-right-radius: var(--rounded-lg);
-        }
-    }
-
-    .card-content {
-        padding: 1.5rem;
-    }
-</style>
+<style></style>

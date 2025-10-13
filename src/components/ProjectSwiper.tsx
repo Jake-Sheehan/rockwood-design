@@ -1,8 +1,11 @@
 import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperInstance } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
+// Base CSS (global)
+// Only needed if you later enable navigation/pagination UI
+// import 'swiper/css/navigation';
+// import { Navigation, Pagination, A11y } from 'swiper/modules';
+
 import styles from '../styles/reactComponents/projectSwitcher.module.css';
 
 export default function ProjectSwiper({
@@ -21,51 +24,68 @@ export default function ProjectSwiper({
 
     const onSwiper = (swiper: SwiperInstance) => {
         swiperRef.current = swiper;
-        setActiveIndex(swiper.realIndex);
-    };
-
-    const onSlideChange = (swiper: SwiperInstance) => {
-        setActiveIndex(swiper.realIndex);
-    };
-
-    const goToNextSlide = () => {
-        swiperRef.current?.slideNext();
-    };
-
-    const goToPrevSlide = () => {
-        swiperRef.current?.slidePrev();
+        setActiveIndex(swiper.realIndex ?? 0);
     };
 
     return (
-        <div>
-            <Swiper
-                onSwiper={onSwiper}
-                onSlideChange={onSlideChange}
-                slidesPerView={1}
-                loop={true}
-                navigation={false}
-                style={{ width: '100%', height: '100%' }}
-            >
-                {projects.map((project) => (
-                    <SwiperSlide key={project.id}>
-                        <img
-                            src={project.imageUrl}
-                            alt={project.title}
-                            style={{ width: '100%', height: '100%' }}
-                        />
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+        <section className={`${styles.mySwiperSection} hero-section`}>
+            <div className={styles.mySwiperContainer}>
+                <Swiper
+                    // modules={[Navigation, Pagination, A11y]} // <— only if you enable those features
+                    onSwiper={onSwiper}
+                    onRealIndexChange={({ realIndex }) =>
+                        setActiveIndex(realIndex)
+                    }
+                    slidesPerView={1}
+                    loop={true}
+                    style={{ width: '100%', height: '100%', maxHeight: '100%' }}
+                    autoHeight={false}
+                    navigation={false} // <— you’re using custom buttons
+                >
+                    {projects.map((project) => (
+                        <SwiperSlide key={project.id}>
+                            <div
+                                className={`gradient-overlay ${styles.slideImageWrapper}`}
+                            >
+                                <img
+                                    src={project.imageUrl}
+                                    alt={project.title}
+                                    loading="lazy"
+                                />
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
 
             <div className={styles.myControls}>
-                <button onClick={goToPrevSlide}>Prev</button>
+                <button
+                    type="button"
+                    onClick={() => swiperRef.current?.slidePrev()}
+                >
+                    Prev
+                </button>
+
                 <p>
                     {projects[activeIndex]?.description ??
-                        `Slide ${activeIndex + 1}`}
+                        (projects.length
+                            ? `Slide ${activeIndex + 1}`
+                            : 'No projects')}
                 </p>
-                <a href={`/projects/${projects[activeIndex].url}`}>link</a>
-                <button onClick={goToNextSlide}>Next</button>
+
+                {projects[activeIndex]?.url ? (
+                    <a href={`/projects/${projects[activeIndex].url}`}>link</a>
+                ) : (
+                    <span />
+                )}
+
+                <button
+                    type="button"
+                    onClick={() => swiperRef.current?.slideNext()}
+                >
+                    Next
+                </button>
             </div>
-        </div>
+        </section>
     );
 }
