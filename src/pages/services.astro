@@ -1,6 +1,8 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import PageHero from '@components/PageHero.astro';
+import Grid from '@components/Grid.astro';
+import ThemacticBreak from '@components/ThematicBreak.astro';
 ---
 
 <Layout title="Services">
@@ -17,7 +19,166 @@ import PageHero from '@components/PageHero.astro';
         </p>
     </PageHero>
 
-    <section class="section wrapper">
-        <h1>services</h1>
+    <section class="planning-section section wrapper">
+        <h3>Planning is the foundation of every successful project</h3>
+        <Grid>
+            <div class="service">
+                <div class="icon">
+                    <img src="https://picsum.photos/50/50?random=1" />
+                </div>
+                <h4>Conservation Issues</h4>
+                <p>
+                    We specialize in navigating conservation regulations to
+                    ensure your project aligns with environmental preservation
+                    guidelines. Our team works closely with local authorities to
+                    balance sustainable design with your architectural vision.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="icon">
+                    <img src="https://picsum.photos/50/50?random=2" />
+                </div>
+                <h4>Floodplain Projects</h4>
+                <p>
+                    Designing in flood-prone areas requires expertise in
+                    resilience and compliance. We develop flood-resistant
+                    structures that meet regulatory standards while ensuring
+                    safety, longevity, and aesthetic integrity.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="icon">
+                    <img src="https://picsum.photos/50/50?random=3" />
+                </div>
+                <h4>Budget and Cost Analysis</h4>
+                <p>
+                    Our detailed cost analysis helps clients plan and manage
+                    expenses effectively. We provide a transparent budgeting
+                    process to keep projects on track and within budget.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="icon">
+                    <img src="https://picsum.photos/50/50?random=4" />
+                </div>
+                <h4>Site and Zoning Analysis</h4>
+                <p>
+                    Understanding site potential and zoning regulations is
+                    crucial for a successful project. We conduct thorough
+                    analyses to optimize land use, identify constraints, and
+                    ensure compliance with local codes.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="icon">
+                    <img src="https://picsum.photos/50/50?random=5" />
+                </div>
+                <h4>On Site Project Consultations</h4>
+                <p>
+                    We offer personalized on-site consultations to assess
+                    project feasibility, discuss design possibilities, and
+                    address site-specific challenges. Our hands-on approach
+                    ensures informed decision-making from the start.
+                </p>
+            </div>
+        </Grid>
     </section>
+
+    <section class="section wrapper">
+        <ThemacticBreak />
+    </section>
+
+    <section class="services-section section wrapper">
+        <h3>
+            A comprehensive range of services tailored to meet the unique needs
+            of each client
+        </h3>
+        <Grid>
+            <div class="service">
+                <div class="icon">
+                    <img src="https://picsum.photos/50/50?random=6" />
+                </div>
+                <h4>New Residences</h4>
+                <p>
+                    From concept to completion, we design custom homes that
+                    reflect your lifestyle and aspirations. Our innovative and
+                    functional designs integrate seamlessly with their
+                    surroundings.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="icon">
+                    <img src="https://picsum.photos/50/50?random=7" />
+                </div>
+                <h4>Renovations</h4>
+                <p>
+                    Whether updating historic properties or modernizing
+                    interiors, we bring new life to existing spaces. Our
+                    renovations enhance functionality, aesthetics, and value
+                    while respecting the original structure.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="icon">
+                    <img src="https://picsum.photos/50/50?random=8" />
+                </div>
+                <h4>Additions</h4>
+                <p>
+                    Expanding your home should feel seamless. We design
+                    additions that harmonize with existing architecture,
+                    providing increased space, improved flow, and enhanced
+                    property value.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="icon">
+                    <img src="https://picsum.photos/50/50?random=9" />
+                </div>
+                <h4>Commercial</h4>
+                <p>
+                    We create dynamic commercial spaces tailored to business
+                    needs, branding, and functionality. Our designs balance
+                    aesthetics and efficiency to support long-term success.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="icon">
+                    <img src="https://picsum.photos/50/50?random=10" />
+                </div>
+                <h4>Beach and Oceanfront</h4>
+                <p>
+                    Coastal projects require specialized design to withstand
+                    environmental conditions while maximizing views and access.
+                    We craft oceanfront homes and structures that blend beauty,
+                    durability, and sustainability.
+                </p>
+            </div>
+        </Grid>
+    </section>
+
+    <style>
+        .service {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .icon {
+            inline-size: 50px;
+            block-size: 50px;
+        }
+
+        h3 {
+            padding-bottom: 2rem;
+        }
+    </style>
 </Layout>

@@ -18,13 +18,15 @@ const { title, imageSrc, url } = Astro.props;
 <style>
     .thumb {
         border-radius: var(--rounded);
-        background-color: var(--color-surface-card);
+        background-color: var(--color-surface-primary);
+        box-shadow: var(--shadow-2xl);
     }
 
     img {
         width: 100%;
         height: auto;
-        border-radius: var(--rounded);
+        border-top-right-radius: var(--rounded);
+        border-top-left-radius: var(--rounded);
     }
 
     .title {

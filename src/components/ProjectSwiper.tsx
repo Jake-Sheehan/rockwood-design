@@ -66,18 +66,26 @@ export default function ProjectSwiper({
                     Prev
                 </button>
 
-                <p>
-                    {projects[activeIndex]?.description ??
-                        (projects.length
-                            ? `Slide ${activeIndex + 1}`
-                            : 'No projects')}
-                </p>
+                <div className={styles.projectInfo}>
+                    <h4>{projects[activeIndex]?.title ?? 'project title'}</h4>
+                    <p>
+                        {projects[activeIndex]?.description ??
+                            (projects.length
+                                ? `Slide ${activeIndex + 1}`
+                                : 'No projects')}
+                    </p>
 
-                {projects[activeIndex]?.url ? (
-                    <a href={`/projects/${projects[activeIndex].url}`}>link</a>
-                ) : (
-                    <span />
-                )}
+                    {projects[activeIndex]?.url ? (
+                        <a
+                            className={styles.viewProjectButton}
+                            href={`/projects/${projects[activeIndex].url}`}
+                        >
+                            View Project
+                        </a>
+                    ) : (
+                        <span />
+                    )}
+                </div>
 
                 <button
                     type="button"

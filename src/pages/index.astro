@@ -7,16 +7,41 @@ import projects from '../mockProjects.json';
 <Layout title="Home">
     <ProjectSwiper projects={projects} client:load />
 
-    <section class="section wrapper">
-        <h2>Trusted for over 35 years</h2>
-        <p>
-            We take pride in crafting precise, builder-friendly plans while
-            expertly navigating complex zoning and conservation regulations.
-            With our deep industry expertise, cutting-edge technology, and an
-            extensive design library for inspiration, we ensure a seamless,
-            efficient, and enjoyable experience from concept to completion.
-        </p>
+    <section class="subheading section wrapper">
+        <div class="subheading-image">
+            <img src={projects[0].imageUrl} alt={projects[0].title} />
+        </div>
+        <div class="subheading-text">
+            <h2>Trusted for over 35 years</h2>
+            <p>
+                We take pride in crafting precise, builder-friendly plans while
+                expertly navigating complex zoning and conservation regulations.
+                With our deep industry expertise, cutting-edge technology, and
+                an extensive design library for inspiration, we ensure a
+                seamless, efficient, and enjoyable experience from concept to
+                completion.
+            </p>
+        </div>
     </section>
 </Layout>
 
-<style></style>
+<style>
+    .subheading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        text-align: center;
+
+        .subheading-image {
+            max-inline-size: 350px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .subheading {
+            flex-direction: row;
+        }
+    }
+</style>

@@ -8,28 +8,28 @@
 
 /* Section spacing */
 section.section {
-    --padding-block: var(--padding-xl);
+    --padding-block: var(--padding-lg);
     padding-block: var(--padding-block);
 
     @media (width > 760px) {
-        --padding-block: var(--padding-2xl);
+        --padding-block: var(--padding-xl);
     }
 
     &[data-padding='narrow'] {
-        --padding-block: var(--padding-md);
+        --padding-block: var(--padding-sm);
 
         @media (width > 760px) {
-            --padding-block: var(--padding-xl);
+            --padding-block: var(--padding-md);
         }
     }
 }
 
 section.hero-section {
-    --padding-block: var(--padding-xl);
+    --padding-block: var(--padding-lg);
     padding-bottom: var(--padding-block);
 
     @media (width > 760px) {
-        --padding-block: var(--padding-2xl);
+        --padding-block: var(--padding-xl);
     }
 
     &[data-padding='narrow'] {

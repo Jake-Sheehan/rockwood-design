@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import PageHero from '@components/PageHero.astro';
+import ThematicBreak from '@components/ThematicBreak.astro';
 ---
 
 <Layout title="About">
@@ -20,36 +21,53 @@ import PageHero from '@components/PageHero.astro';
         </p>
     </PageHero>
 
+    <section class="person-section section wrapper">
+        <div class="person-image">
+            <div class="socials"></div>
+            <img
+                src="https://picsum.photos/1920/1080?random=1"
+                alt="Richard (Dick) Rockwood"
+            />
+        </div>
+        <div class="person-text">
+            <h2>Richard (Dick) Rockwood</h2>
+            <p>
+                Richard began his career in industrial education with 15 years
+                of product development experience, designing lighting fixtures
+                and home furnishings for a manufacturer of home furniture
+                products. Always simultaneously designing homes, he became a
+                full-time designer in 1986, designing and building homes all
+                over New England and in Colorado.
+            </p>
+        </div>
+    </section>
+
     <section class="section wrapper">
-        <h1>about</h1>
-        <p>
-            Lorem ipsum odor amet, consectetuer adipiscing elit. Molestie mauris
-            condimentum per fusce, rhoncus id facilisis at. Posuere venenatis
-            sollicitudin dis ex; hendrerit porttitor himenaeos duis. Montes diam
-            quam nec parturient dictum blandit aliquam penatibus elit. Lacus
-            fusce himenaeos convallis vehicula tortor efficitur donec. Odio
-            dapibus egestas porta etiam fermentum fermentum dignissim. Eget
-            porttitor adipiscing class litora taciti ornare. Pellentesque etiam
-            praesent iaculis sapien fringilla nullam. Congue aenean dis sodales,
-            inceptos ipsum litora eros ligula.
-        </p>
-        <p>
-            Ullamcorper mauris aptent iaculis augue; dis ex. Consequat potenti
-            purus natoque habitant imperdiet maecenas. Risus lacinia maximus,
-            netus vel habitasse imperdiet. Urna nunc maecenas nostra; adipiscing
-            justo cursus porta. Nibh ac massa primis convallis platea bibendum.
-            Malesuada congue dis orci tempor dui mi, erat praesent sollicitudin.
-            Himenaeos eros consequat cras potenti nullam ante ultricies
-            ultricies. Per dignissim consequat quisque; cubilia tempor dis
-            molestie tellus. Orci natoque magnis tellus ullamcorper ex primis
-            vulputate.
-        </p>
-        <p>
-            In hendrerit elit parturient ornare augue fusce. Id ut risus posuere
-            gravida nullam parturient. Faucibus facilisi pretium eget congue
-            congue mus. Primis commodo lacinia ornare accumsan fringilla proin
-            per auctor. Dis tortor torquent curae nostra nunc. Primis leo porta
-            tristique; gravida nam tortor adipiscing ante.
-        </p>
+        <ThematicBreak />
+    </section>
+
+    <section class="person-section section wrapper">
+        <div class="person-image">
+            <div class="socials"></div>
+            <img
+                src="https://picsum.photos/1920/1080?random=2"
+                alt="Phillip Baker"
+            />
+        </div>
+        <div class="person-text">
+            <h2>Phillip Baker</h2>
+            <p>
+                Phillip graduated (2011) from Wentworth Institute of Technology
+                with his Masters in Architecture. His love for design and
+                drawing began at a young age where he always had the dream of
+                studying architecture and design homes. With the push of family
+                and friends, Phillip was able to pursue a career in
+                Architectural Design and learn all aspects, small and large,
+                from landscape, residential, and to commercial. Combining the
+                knowledge received in school and the experience gained from
+                working in the field, Phillip is able to create timeless designs
+                that seamlessly blend in with the existing building fabric.
+            </p>
+        </div>
     </section>
 </Layout>

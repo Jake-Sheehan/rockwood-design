@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import PageHero from '@components/PageHero.astro';
+import ThematicBreak from '@components/ThematicBreak.astro';
 ---
 
 <Layout title="Process">
@@ -16,7 +17,133 @@ import PageHero from '@components/PageHero.astro';
             benefits and challenges of various design possibilities.
         </p>
     </PageHero>
-    <section class="section wrapper">
-        <h1>process</h1>
+    <section class="steps-section section wrapper">
+        <div class="process-step">
+            <div class="process-title">
+                <h4>Step 1</h4>
+                <h3>Consultation</h3>
+            </div>
+            <div class="process-content">
+                <p>
+                    Our initial consultation begins with a comprehensive review
+                    of your site plan and budget for new homes or a site visit
+                    and budget assessment for renovations and additions. During
+                    this meeting, we will discuss your vision, address any
+                    concerns, and provide expert guidance to ensure a clear
+                    understanding of the project scope.
+                </p>
+                <p>
+                    At this stage, we can also evaluate your home to identify
+                    potential construction costs, including any unforeseen
+                    expenses. Our strategic design approach focuses on
+                    minimizing impact, ultimately reducing construction costs
+                    while maintaining the integrity of your vision. With years
+                    of experience navigating complex zoning and conservation
+                    regulations, we streamline the process to ensure a seamless
+                    experience.
+                </p>
+            </div>
+        </div>
+
+        <ThematicBreak />
+
+        <div class="process-step">
+            <div class="process-title">
+                <h4>Step 2</h4>
+                <h3>Schematic Design</h3>
+            </div>
+            <div class="process-content">
+                <p>
+                    Design sketches developed at our consultation serve as the
+                    foundation for the schematic design plan. Site orientation,
+                    optimal views, sun direction, landscaping, light, weather,
+                    grading, and more are all taken into consideration.
+                </p>
+                <p>
+                    Utilizing advanced 2D and 3D technology, our schematic plans
+                    provide a clear visualization of both interior and exterior
+                    layouts, offering a realistic sense of space and traffic
+                    flow. We incorporate to-scale furniture within the plans and
+                    explore multiple configurations with you, refining every
+                    detail until we reach the final design that best aligns with
+                    your vision.
+                </p>
+            </div>
+        </div>
+
+        <ThematicBreak />
+
+        <div class="process-step">
+            <div class="process-title">
+                <h4>Step 3</h4>
+                <h3>Construction</h3>
+            </div>
+            <div class="process-content prose">
+                <p>
+                    Preliminary plans are developed, reviewed, and refined
+                    throughout the design process until the final plan is
+                    established. Once the design is solidified, a pricing set of
+                    plans is prepared to initiate discussions with
+                    contractors.At this stage, we are happy to assist you in
+                    selecting qualified contractors. Our extensive experience
+                    working with a broad network of skilled and reliable
+                    professionals allows us to provide trusted recommendations
+                    tailored to your needs.
+                </p>
+                <p>
+                    Feedback from contractors, along with consultations with
+                    structural engineers, ensures that all permit requirements
+                    are met. This collaboration allows us to finalize the
+                    construction drawings to be provided to the builders for
+                    project execution.
+                </p>
+            </div>
+        </div>
     </section>
 </Layout>
+
+<style>
+    .steps-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        algin-items: flex-start;
+        gap: var(--padding-2xl);
+    }
+
+    .process-step {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1.5rem;
+        inline-size: 100%;
+
+        @media (min-width: 1200px) {
+            flex-direction: row;
+        }
+    }
+
+    .process-title {
+        text-align: center;
+        flex-basis: 33%;
+
+        h4 {
+            text-transform: uppercase !important;
+            font-weight: 400;
+        }
+
+        h3 {
+            margin-top: 0.25em !important;
+        }
+    }
+
+    .process-content {
+        flex-basis: 67%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+</style>

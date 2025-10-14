@@ -22,14 +22,30 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
     z-index: 1000;
-    background-color: rgb(0 0 0 / 0.8);
+    background-color: rgb(23 23 27 / 0.8);
     inline-size: fit-content;
     margin: 0 auto;
     border-radius: var(--rounded);
     border: 2px solid var(--color-border);
-    padding: 1rem;
-    gap: 10px;
+    padding: 0.5rem 1rem;
+}
+
+.projectInfo {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.viewProjectButton {
+    border: 1px solid var(--color-text-primary);
+    padding: 5px 10px;
+    border-radius: var(--rounded-sm);
+    font-weight: bold;
 }
 
 .mySwiperContainer {
