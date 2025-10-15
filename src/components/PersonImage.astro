@@ -1,0 +1,75 @@
+---
+interface Props {
+    imageUrl: string;
+    name: string;
+}
+
+const { imageUrl, name } = Astro.props;
+---
+
+<div class="person-image">
+    <div class="socials">
+        <img
+            src="https://picsum.photos/48/48?random=1"
+            alt="social media icons"
+            width="24"
+            height="24"
+        />
+        <img
+            src="https://picsum.photos/48/48?random=1"
+            alt="social media icons"
+            width="24"
+            height="24"
+        />
+        <img
+            src="https://picsum.photos/48/48?random=1"
+            alt="social media icons"
+            width="24"
+            height="24"
+        />
+    </div>
+    <div class="image-container">
+        <img src={imageUrl} alt={name} />
+    </div>
+</div>
+
+<style>
+    .person-image {
+        --radius-var: var(--rounded-lg);
+        display: flex;
+        flex-direction: row;
+        border-radius: var(--rounded);
+    }
+
+    .socials {
+        flex: 0 0 auto;
+        background-color: var(--color-surface-accent);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 10px;
+        border-top-left-radius: var(--radius-var);
+        border-bottom-left-radius: var(--radius-var);
+
+        img {
+            width: 24px;
+            height: 24px;
+            object-fit: cover;
+        }
+    }
+
+    .image-container {
+        flex: 1 1 auto;
+        border-top-right-radius: var(--radius-var);
+        border-bottom-right-radius: var(--radius-var);
+
+        img {
+            object-fit: cover;
+            border-top-right-radius: var(--radius-var);
+            border-bottom-right-radius: var(--radius-var);
+        }
+    }
+</style>

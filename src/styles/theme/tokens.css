@@ -53,9 +53,11 @@
     --color-surface-card: var(--black);
     --color-surface-brand: var(--color-tertiary);
     --color-surface-inverted: var(--white);
-    --color-surface-success: var(--color-green-500);
-    --color-surface-failure: var(--color-red-500);
+    --color-surface-success: green;
+    --color-surface-failure: red;
     --color-surface-opaque: var(--dark-gray-opaque);
+    --color-surface-accent: var(--color-accent);
+    --color-surface-input: var(--gray-800);
 
     /* border */
     --color-border: var(--gray-800);

@@ -1,37 +1,114 @@
----
-import SubmitButton from '@components/buttons/SubmitButton.astro';
----
+<div class="card">
+    <form method="POST" action="/contact">
+        <div class="welcome-text">
+            <h3>Lets Chat!</h3>
+            <p>
+                We'd love to chat, please provide your contact details and we'll
+                be in touch as quickly as possible.
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="firstname">first name</label>
+            <input required type="text" name="firstname" id="firstname" />
+        </div>
 
-<form method="POST" action="/contact">
-    <label for="firstname">first name</label>
-    <input type="text" name="firstname" id="firstname" />
+        <div class="form-group">
+            <label for="lastname">last name</label>
+            <input required type="text" name="lastname" id="lastname" />
+        </div>
 
-    <label for="lastname">last name</label>
-    <input type="text" name="lastname" id="lastname" />
+        <div class="form-group">
+            <label for="email">email</label>
+            <input required type="email" name="email" id="email" />
+        </div>
 
-    <label for="email">email</label>
-    <input type="email" name="email" id="email" />
+        <div class="form-group">
+            <label for="subject">subject</label>
+            <input required type="text" name="subject" id="subject" />
+        </div>
 
-    <label for="subject">subject</label>
-    <input type="text" name="subject" id="subject" />
+        <div class="form-group">
+            <label for="message">message</label>
+            <textarea required name="message" id="message"></textarea>
+        </div>
 
-    <label for="message">message</label>
-    <textarea name="message" id="message"></textarea>
-
-    <SubmitButton />
-</form>
+        <button type="submit">Get In Touch</button>
+    </form>
+</div>
 
 <style>
+    .card {
+        /* give card min height and width so it is visible with no content */
+        min-block-size: 10px;
+        min-inline-size: 10px;
+        /* styles */
+        background-color: var(--color-surface-card);
+        box-shadow: var(--shadow-card);
+        border-radius: var(--rounded-lg);
+        inline-size: fit-content;
+        padding: 2rem;
+    }
+
+    .welcome-text {
+        margin-bottom: 1em;
+        p {
+            margin-top: 0 !important;
+        }
+    }
+
     form {
         padding: 1rem;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 0.5rem;
+        display: grid;
+        gap: 1rem;
+        inline-size: fit-content;
+        color: var(--color-text-primary);
+    }
+
+    .form-group {
+        display: grid;
+        gap: 0.5cap;
     }
 
     label {
+        text-transform: uppercase;
+        font-size: var(--fs-body-small);
+        color: var(--color-text-primary);
+        text-box-trim: trim-both;
+        text-box-edge: cap alphabetic;
+    }
+
+    input {
+        background-color: var(--color-surface-input);
+        border: 1px solid var(--color-border);
+        border-radius: 16px;
+        color: var(--color-text-primary);
+        padding: 1ex 2ex;
+        width: 100%;
+    }
+
+    textarea {
+        background-color: var(--color-surface-input);
+        min-block-size: 100px;
+        min-inline-size: 300px;
+        resize: vertical;
+        border: 1px solid var(--color-border);
+        border-radius: 16px;
+        color: var(--color-text-primary);
+        padding: 1ex 2ex;
+    }
+
+    button {
+        background-color: var(--color-surface-accent);
+        color: var(--color-text-inverted);
+        border: none;
+        border-radius: var(--rounded);
+        padding: 0.5rem 1rem;
         text-transform: capitalize;
+        justify-self: end;
+
+        &:hover,
+        &:focus-visible {
+            background-color: rebeccapurple;
+        }
     }
 </style>

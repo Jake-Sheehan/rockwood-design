@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import PageHero from '@components/PageHero.astro';
+import PersonImage from '@components/PersonImage.astro';
 import ThematicBreak from '@components/ThematicBreak.astro';
 ---
 
@@ -23,10 +24,9 @@ import ThematicBreak from '@components/ThematicBreak.astro';
 
     <section class="person-section section wrapper">
         <div class="person-image">
-            <div class="socials"></div>
-            <img
-                src="https://picsum.photos/1920/1080?random=1"
-                alt="Richard (Dick) Rockwood"
+            <PersonImage
+                name="Richard (Dick) Rockwood"
+                imageUrl="https://picsum.photos/1920/1080?random=1"
             />
         </div>
         <div class="person-text">
@@ -48,10 +48,9 @@ import ThematicBreak from '@components/ThematicBreak.astro';
 
     <section class="person-section section wrapper">
         <div class="person-image">
-            <div class="socials"></div>
-            <img
-                src="https://picsum.photos/1920/1080?random=2"
-                alt="Phillip Baker"
+            <PersonImage
+                imageUrl="https://picsum.photos/1920/1080?random=1"
+                name="Phillip Baker"
             />
         </div>
         <div class="person-text">
@@ -71,3 +70,28 @@ import ThematicBreak from '@components/ThematicBreak.astro';
         </div>
     </section>
 </Layout>
+
+<style>
+    .person-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+
+        @media (min-width: 1200px) {
+            flex-direction: row;
+            gap: 5%;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .person-image {
+            flex-basis: 32.5%;
+        }
+
+        .person-text {
+            flex-basis: 62.5%;
+        }
+    }
+</style>

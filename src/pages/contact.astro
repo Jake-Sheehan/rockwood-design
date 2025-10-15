@@ -46,37 +46,62 @@ if (Astro.request.method === 'POST') {
         </p>
     </PageHero>
 
-    <section class="section wrapper">
-        <div class="text">
-            <h1>Contact Us</h1>
-            <p>
-                Lorem ipsum odor amet, consectetuer adipiscing elit. Ex eros
-                potenti vel tortor erat primis. Primis sed posuere vivamus
-                efficitur ligula facilisi aenean sit? Sociosqu quis rutrum nisi
-                etiam purus ligula. Velit ac fringilla litora integer vehicula
-                sociosqu. Malesuada nullam lorem aliquam ligula eu parturient.
-                Fusce scelerisque neque enim molestie senectus sollicitudin
-                phasellus. Phasellus aptent metus donec nunc sit lectus
-                imperdiet arcu scelerisque. Donec quisque accumsan lectus, lorem
-                vestibulum ac ad.
-            </p>
+    <section class="form-section section wrapper">
+        {
+            formSubmitted ? (
+                <PrimaryCard>
+                    <p>{resultMessage}</p>
+                </PrimaryCard>
+            ) : (
+                <ContactForm />
+            )
+        }
+    </section>
+
+    <section class="contact-info-section section wrapper">
+        <div class="contact-info">
+            <h4>Marshfield</h4>
+            <p>Headquarters</p>
+            <p>1020 Plain Street - Suite 320</p>
+            <p>Marshfield, MA 02050</p>
+            <p>Office: (781)-837-3140</p>
         </div>
-        <PrimaryCard>
-            {formSubmitted ? <p>{resultMessage}</p> : <ContactForm />}
-        </PrimaryCard>
+        <div class="contact-info">
+            <h4>Milton</h4>
+            <p>7 Pleasant Street - SUite 302</p>
+            <p>Milton, MA 02186</p>
+            <p>Office: (617)-898-0702</p>
+        </div>
+        <div class="contact-info">
+            <h4>Yarmouthport</h4>
+            <p>477 Route 6A -Suite 8</p>
+            <p>Yarmouthport, MA 02675</p>
+            <p>Office: (508)-289-1438</p>
+        </div>
     </section>
 </Layout>
 
 <style>
-    section {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 24px;
-        justify-items: center;
+    .form-section {
+        display: flex;
+        justify-content: center;
         align-items: center;
+    }
 
-        @media (width > 760px) {
-            grid-template-columns: repeat(2, 1fr);
+    .contact-info-section {
+        padding-block: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        place-items: center;
+        text-align: center;
+
+        @media (max-width: 1200px) {
+            grid-template-columns: 1fr;
         }
+    }
+
+    .contact-info {
+        flex-basis: 33%;
     }
 </style>
