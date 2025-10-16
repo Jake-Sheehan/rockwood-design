@@ -45,7 +45,7 @@ export default function ProjectSwiper({
                     {projects.map((project) => (
                         <SwiperSlide key={project.id}>
                             <div
-                                className={`gradient-overlay ${styles.slideImageWrapper}`}
+                                className={`gradient-overlay-2 ${styles.slideImageWrapper}`}
                             >
                                 <img
                                     src={project.imageUrl}

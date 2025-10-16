@@ -3,9 +3,11 @@ import Layout from '@layouts/Layout.astro';
 import Grid from '@components/Grid.astro';
 import ProjectThumb from '@components/ProjectThumb.astro';
 import projects from '../mockProjects.json';
+import HeroImage from '@components/HeroImage.astro';
 ---
 
 <Layout title="Portfolio">
+    <HeroImage imageUrl="https://picsum.photos/1920/1080" />
     <section class="section wrapper">
         <h2>Explore Our Projects</h2>
         <Grid>

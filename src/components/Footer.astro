@@ -1,1 +1,77 @@
-<footer>footer</footer>
+<footer>
+    <div class="footer-content">
+        <div class="logo">
+            <h3>Rockwood Design</h3>
+        </div>
+
+        <div class="navigation">
+            <ul>
+                <li>
+                    <h4>Company</h4>
+                </li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/">Careers</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <h4>Explore</h4>
+                </li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/process">Process</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>Rockwood Design Inc. ©2025</p>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background-color: var(--color-surface-card);
+        padding: 3rem 5rem;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .navigation {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1.5rem;
+
+        h4 {
+            font-size: 1.125rem !important;
+        }
+
+        a {
+            font-size: 1rem !important;
+        }
+    }
+
+    .copyright {
+        color: var(--color-text-muted);
+        width: 100%;
+        border-top: 1px solid var(--color-border);
+        margin-top: 2rem;
+        padding-top: 1cap;
+        font-size: 0.875rem;
+    }
+</style>

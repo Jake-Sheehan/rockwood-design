@@ -1,8 +1,57 @@
 @font-face {
     font-family: 'Helvetica';
-    src: url('../../../public/fonts/Helvetica.ttf') format('ttf');
+    src: url('/src/assets/fonts/Helvetica/HelveticaLTPro-Light.otf')
+        format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('/src/assets/fonts/Helvetica/HelveticaLTPro-LightOblique.otf')
+        format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('/src/assets/fonts/Helvetica/HelveticaLTPro-Roman.otf')
+        format('opentype');
     font-weight: 400;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('/src/assets/fonts/Helvetica/HelveticaLTPro-Bold.otf')
+        format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('/src/assets/fonts/Helvetica/HelveticaLTPro-BoldOblique.otf')
+        format('opentype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('/src/assets/fonts/Helvetica/HelveticaLTPro-Black.otf')
+        format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('/src/assets/fonts/Helvetica/HelveticaLTPro-BlackOblique.otf')
+        format('opentype');
+    font-weight: 900;
+    font-style: italic;
 }
 
 :root {
@@ -24,6 +73,7 @@
     --black: #171717;
     --black-shadow: rgb(0 0 0 / 0.25);
     --dark-gray-opaque: rgb(23 23 27 / 0.8);
+    --dark-gray-opaque-2: rgb(23 23 27 / 0.95);
 
     /* brand */
     --color-primary: #1a9c9e;

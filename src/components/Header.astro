@@ -1,6 +1,6 @@
 ---
 import HamburgerMenu from '@components/svg/hamburger.astro';
-import logoUrl from '@assets/logoipsum.svg?url';
+import logoUrl from '@assets/rockwood-design-logo-2.png?url';
 ---
 
 <script>
@@ -38,7 +38,7 @@ import logoUrl from '@assets/logoipsum.svg?url';
 </script>
 
 <header class="primary-header">
-    <img src={logoUrl} alt="logo" />
+    <img src={logoUrl} alt="logo" width="36" height="36" />
 
     <button aria-controls="nav" aria-expanded="false">
         <span class="visually-hidden">menu</span>
@@ -79,7 +79,11 @@ import logoUrl from '@assets/logoipsum.svg?url';
         gap: 1rem;
         padding: 1rem 2rem;
         width: 100%;
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10000;
     }
 
     img {
@@ -97,9 +101,13 @@ import logoUrl from '@assets/logoipsum.svg?url';
         padding: 0;
 
         display: none;
-        @media (width < 760px) {
+        @media (width < 1200px) {
             display: block;
         }
+    }
+
+    a {
+        font-family: var(--ff-nav);
     }
 
     nav {
@@ -116,18 +124,14 @@ import logoUrl from '@assets/logoipsum.svg?url';
             justify-content: center;
             align-items: center;
             gap: 1rem;
-
-            @media (width < 760px) {
-                flex-flow: column nowrap;
-            }
         }
 
         /* Styles for dropdown nav */
-        @media (width < 760px) {
+        @media (width < 1200px) {
             display: none;
             grid-area: auto;
-            background-color: var(--color-surface-primary);
-            border: 1px solid var(--color-border);
+            background-color: var(--color-surface-header);
+            border-bottom: 1px solid var(--color-border);
             box-shadow: var(--shadow-nav);
             z-index: 1000;
             padding: 2rem;
@@ -135,14 +139,17 @@ import logoUrl from '@assets/logoipsum.svg?url';
             border-bottom-right-radius: var(--rounded);
             position: absolute;
             top: 100%;
-            right: 10px;
+            right: 0;
+            left: 0;
 
             ul {
+                flex-flow: column nowrap;
                 gap: 0;
             }
 
             li {
                 width: 100%;
+                text-align: center;
             }
 
             li:not(:first-child) {

@@ -4,8 +4,9 @@
      * */
 
     /* font family */
-    --ff-base: var(--font-roboto);
+    --ff-base: var(--font-helvetica);
     --ff-heading: var(--font-helvetica);
+    --ff-nav: var(--font-roboto);
 
     /* font size */
     --fs-title-large: var(--fs-1000);
@@ -47,7 +48,7 @@
 
     /* surface */
     --color-surface-primary: var(--gray-900);
-    --color-surface-header: var(--dark-gray-opaque);
+    --color-surface-header: var(--dark-gray-opaque-2);
     --color-surface-overlay: 39 39 39;
     --color-surface-secondary: var(--color-secondary);
     --color-surface-card: var(--black);

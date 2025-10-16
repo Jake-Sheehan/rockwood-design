@@ -23,6 +23,22 @@ import projects from '../mockProjects.json';
             </p>
         </div>
     </section>
+
+    <section class="map-section section wrapper">
+        <div class="map-text">
+            <h2>Our Projects</h2>
+            <p>
+                Explore our portfolio of architectural projects. Each point on
+                the map represents a story of collaboration, innovation, and
+                craftsmanship that defines our approach to building spaces that
+                endure.
+            </p>
+        </div>
+        <iframe
+            src="https://www.google.com/maps/d/embed?mid=12AERk8C8fTaJElpMLewfFXcJ-R_1XiI&ehbc=2E312F&noprof=1"
+            width="640"
+            height="480"></iframe>
+    </section>
 </Layout>
 
 <style>
@@ -43,5 +59,23 @@ import projects from '../mockProjects.json';
         .subheading {
             flex-direction: row;
         }
+    }
+
+    .map-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media (min-width: 1200px) {
+            flex-direction: row;
+            gap: 2rem;
+        }
+    }
+
+    .map-section iframe {
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+        border: none;
     }
 </style>
