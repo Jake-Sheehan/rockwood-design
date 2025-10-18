@@ -1,0 +1,8 @@
+---
+import { PortableText } from 'astro-portabletext';
+
+// Pass in the Sanity "body" array as the "value" prop
+const { value } = Astro.props;
+---
+
+<PortableText value={value} />
