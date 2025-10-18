@@ -8,11 +8,11 @@
 
 /* Section spacing */
 section.section {
-    --padding-block: var(--padding-lg);
+    --padding-block: var(--padding-xl);
     padding-block: var(--padding-block);
 
     @media (width > 760px) {
-        --padding-block: var(--padding-xl);
+        --padding-block: var(--padding-2xl);
     }
 
     &[data-padding='narrow'] {
