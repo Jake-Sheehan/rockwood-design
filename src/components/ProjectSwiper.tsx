@@ -9,6 +9,7 @@ import type { Swiper as SwiperInstance } from 'swiper';
 import styles from '../styles/reactComponents/projectSwitcher.module.css';
 import type { Project } from '../../sanity.types.ts';
 import { urlFor } from '../lib';
+import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react';
 
 export default function ProjectSwiper({ projects }: { projects: Project[] }) {
     const swiperRef = useRef<SwiperInstance | null>(null);
@@ -59,21 +60,31 @@ export default function ProjectSwiper({ projects }: { projects: Project[] }) {
 
             <div className={styles.myControls}>
                 <button
+                    className={styles.arrowButton}
                     type="button"
                     onClick={() => swiperRef.current?.slidePrev()}
                 >
-                    Prev
+                    <CaretLeftIcon color="#f2f2f2" size={24} />
                 </button>
 
                 <div className={styles.projectInfo}>
-                    <h4>{projects[activeIndex]?.title ?? 'project title'}</h4>
-
+                    <h4 className={styles.projectTitle}>
+                        {projects[activeIndex]?.title ?? 'project title'}
+                    </h4>
+                    <p className={styles.description}>
+                        {projects[activeIndex].summary}
+                    </p>
                     {projects[activeIndex]?.slug ? (
                         <a
                             className={styles.viewProjectButton}
                             href={`/projects/${projects[activeIndex].slug}`}
                         >
-                            View Project
+                            <p className={styles.learnMore}>
+                                Learn More
+                                <span className={styles.rightArrow}>
+                                    &rarr;
+                                </span>
+                            </p>
                         </a>
                     ) : (
                         <span />
@@ -81,10 +92,11 @@ export default function ProjectSwiper({ projects }: { projects: Project[] }) {
                 </div>
 
                 <button
+                    className={styles.arrowButton}
                     type="button"
                     onClick={() => swiperRef.current?.slideNext()}
                 >
-                    Next
+                    <CaretRightIcon color="#f2f2f2" size={24} />
                 </button>
             </div>
         </section>

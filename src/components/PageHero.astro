@@ -7,7 +7,7 @@ interface Props {
 const { title, imageUrl } = Astro.props;
 ---
 
-<section>
+<section class="hero-section">
     <div class="hero gradient-overlay">
         <img src={imageUrl} alt={`Hero image for ${title}`} />
     </div>
@@ -18,15 +18,18 @@ const { title, imageUrl } = Astro.props;
 </section>
 
 <style>
-    .hero {
-        position: relative;
+    section {
         width: 100%;
-        height: 75vh;
+        position: relative;
+    }
+
+    .hero {
+        width: 100%;
+        height: 60svh;
+        z-index: 1;
     }
 
     .hero img {
-        position: absolute;
-        inset: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -35,14 +38,14 @@ const { title, imageUrl } = Astro.props;
 
     .overlay {
         position: relative;
-        transform: translateY(-50%);
         text-align: center;
         background-color: var(--color-surface-card);
         z-index: 100;
         padding: 1rem;
         border: 2px solid var(--color-border);
-        width: 90%;
+        width: 95%;
         margin: 0 auto;
+        margin-top: -100px;
         border-radius: var(--rounded);
 
         @media (min-width: 1200px) {

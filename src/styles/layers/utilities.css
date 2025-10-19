@@ -23,7 +23,8 @@
     inset: 0;
     background: linear-gradient(
         to bottom,
-        rgb(var(--color-surface-overlay) / 0) 90%,
+        rgb(var(--color-surface-overlay) / 0) 50%,
+        rgb(var(--color-surface-overlay) / 0.5) 75%,
         rgb(var(--color-surface-overlay) / 1) 100%
     );
     pointer-events: none; /* lets you still click the image */
