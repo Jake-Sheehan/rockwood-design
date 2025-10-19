@@ -67,12 +67,6 @@ export default function ProjectSwiper({ projects }: { projects: Project[] }) {
 
                 <div className={styles.projectInfo}>
                     <h4>{projects[activeIndex]?.title ?? 'project title'}</h4>
-                    <p>
-                        {projects[activeIndex]?.summary ??
-                            (projects.length
-                                ? `Slide ${activeIndex + 1}`
-                                : 'No projects')}
-                    </p>
 
                     {projects[activeIndex]?.slug ? (
                         <a
