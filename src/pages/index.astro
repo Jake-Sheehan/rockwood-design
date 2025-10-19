@@ -1,7 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProjectSwiper from '@components/ProjectSwiper';
-import projects from '../mockProjects.json';
+import { getFeaturedProjects } from 'src/lib';
+
+const projects = await getFeaturedProjects();
 ---
 
 <Layout title="Home">
@@ -9,7 +11,7 @@ import projects from '../mockProjects.json';
 
     <section class="subheading section wrapper">
         <div class="subheading-image">
-            <img src={projects[0].imageUrl} alt={projects[0].title} />
+            <img src="" alt={projects[0].title} />
         </div>
         <div class="subheading-text">
             <h2>Trusted for over 35 years</h2>

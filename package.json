@@ -20,7 +20,6 @@
         "@types/react-dom": "^19.2.2",
         "astro": "^5.14.1",
         "astro-portabletext": "^0.11.3",
-        "nanostores": "^0.11.3",
         "phosphor-astro": "^2.1.0",
         "react": "^19.2.0",
         "react-dom": "^19.2.0",

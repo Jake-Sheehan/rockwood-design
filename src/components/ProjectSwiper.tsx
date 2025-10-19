@@ -7,18 +7,10 @@ import type { Swiper as SwiperInstance } from 'swiper';
 // import { Navigation, Pagination, A11y } from 'swiper/modules';
 
 import styles from '../styles/reactComponents/projectSwitcher.module.css';
+import type { Project } from '../../sanity.types.ts';
+import { urlFor } from '../lib';
 
-export default function ProjectSwiper({
-    projects,
-}: {
-    projects: {
-        id: number;
-        title: string;
-        description: string;
-        imageUrl: string;
-        url: string;
-    }[];
-}) {
+export default function ProjectSwiper({ projects }: { projects: Project[] }) {
     const swiperRef = useRef<SwiperInstance | null>(null);
     const [activeIndex, setActiveIndex] = useState<number>(0);
 
@@ -43,12 +35,19 @@ export default function ProjectSwiper({
                     navigation={false} // <— you’re using custom buttons
                 >
                     {projects.map((project) => (
-                        <SwiperSlide key={project.id}>
+                        <SwiperSlide key={project._id}>
                             <div
                                 className={`gradient-overlay-2 ${styles.slideImageWrapper}`}
                             >
                                 <img
-                                    src={project.imageUrl}
+                                    src={
+                                        project.hero
+                                            ? urlFor(project.hero)
+                                                  .width(1600)
+                                                  .height(900)
+                                                  .url()
+                                            : '/placeholder.png'
+                                    }
                                     alt={project.title}
                                     loading="lazy"
                                 />
@@ -69,16 +68,16 @@ export default function ProjectSwiper({
                 <div className={styles.projectInfo}>
                     <h4>{projects[activeIndex]?.title ?? 'project title'}</h4>
                     <p>
-                        {projects[activeIndex]?.description ??
+                        {projects[activeIndex]?.summary ??
                             (projects.length
                                 ? `Slide ${activeIndex + 1}`
                                 : 'No projects')}
                     </p>
 
-                    {projects[activeIndex]?.url ? (
+                    {projects[activeIndex]?.slug ? (
                         <a
                             className={styles.viewProjectButton}
-                            href={`/projects/${projects[activeIndex].url}`}
+                            href={`/projects/${projects[activeIndex].slug}`}
                         >
                             View Project
                         </a>
