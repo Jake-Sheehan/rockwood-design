@@ -18,7 +18,7 @@ const { title, imageSrc, url } = Astro.props;
 <style>
     .thumb {
         border-radius: var(--rounded);
-        background-color: var(--color-surface-primary);
+        background-color: var(--color-surface-card);
         box-shadow: var(--shadow-2xl);
     }
 
@@ -31,5 +31,8 @@ const { title, imageSrc, url } = Astro.props;
 
     .title {
         padding: 1rem;
+        display: flex;
+        justify-content: center;
+        algin-items: center;
     }
 </style>

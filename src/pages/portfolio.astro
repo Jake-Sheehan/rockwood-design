@@ -2,24 +2,45 @@
 import Layout from '@layouts/Layout.astro';
 import Grid from '@components/Grid.astro';
 import ProjectThumb from '@components/ProjectThumb.astro';
-import projects from '../mockProjects.json';
 import HeroImage from '@components/HeroImage.astro';
+import { getAllProjects, urlFor } from '../lib.ts';
+
+const projects = await getAllProjects();
 ---
 
 <Layout title="Portfolio">
     <HeroImage imageUrl="https://picsum.photos/1920/1080" />
-    <section class="section wrapper">
-        <h2>Explore Our Projects</h2>
+    <section class="portfolio-section section wrapper">
+        <h2 class="page-title">Explore Our Projects</h2>
         <Grid>
             {
                 projects.map((project) => (
                     <ProjectThumb
-                        imageSrc={project.imageUrl}
-                        title={project.title}
-                        url={project.url}
+                        imageSrc={
+                            project.hero
+                                ? urlFor(project.hero)
+                                      .width(1600)
+                                      .height(900)
+                                      .url()
+                                : '/placeholder.png'
+                        }
+                        title={project.title ?? 'title'}
+                        url={project.slug ?? ''}
                     />
                 ))
             }
         </Grid>
     </section>
 </Layout>
+
+<style>
+    .portfolio-section {
+        margin-top: -100px;
+        position: relative;
+        z-index: 1000;
+    }
+
+    .page-title {
+        margin-bottom: 2rem !important;
+    }
+</style>

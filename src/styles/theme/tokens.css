@@ -50,6 +50,7 @@
     --color-surface-primary: var(--gray-900);
     --color-surface-header: var(--dark-gray-opaque-2);
     --color-surface-overlay: 39 39 39;
+    --color-surface-overlay-3: 23 23 23;
     --color-surface-secondary: var(--color-secondary);
     --color-surface-card: var(--black);
     --color-surface-brand: var(--color-tertiary);

@@ -14,7 +14,7 @@
 
 .gradient-overlay {
     position: relative;
-    display: inline-block; /* or block, depending on layout */
+    display: block; /* or block, depending on layout */
 }
 
 .gradient-overlay::after {
@@ -33,7 +33,7 @@
 
 .gradient-overlay-2 {
     position: relative;
-    display: inline-block; /* or block, depending on layout */
+    display: block; /* or block, depending on layout */
 }
 
 .gradient-overlay-2::after {
@@ -45,6 +45,25 @@
         rgb(var(--color-surface-overlay) / 0) 50%,
         rgb(var(--color-surface-overlay) / 0.5) 75%,
         rgb(var(--color-surface-overlay) / 1) 100%
+    );
+    pointer-events: none; /* lets you still click the image */
+    z-index: 10;
+}
+
+.gradient-overlay-3 {
+    position: relative;
+    inline-size: 100%;
+    block-size: 100%;
+}
+
+.gradient-overlay-3::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgb(var(--color-surface-overlay-3) / 0) 75%,
+        rgb(var(--color-surface-overlay-3) / 1) 100%
     );
     pointer-events: none; /* lets you still click the image */
     z-index: 10;

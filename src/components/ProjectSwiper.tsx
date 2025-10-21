@@ -7,11 +7,15 @@ import type { Swiper as SwiperInstance } from 'swiper';
 // import { Navigation, Pagination, A11y } from 'swiper/modules';
 
 import styles from '../styles/reactComponents/projectSwitcher.module.css';
-import type { Project } from '../../sanity.types.ts';
+import type { ProjectView } from '../lib.ts';
 import { urlFor } from '../lib';
 import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react';
 
-export default function ProjectSwiper({ projects }: { projects: Project[] }) {
+export default function ProjectSwiper({
+    projects,
+}: {
+    projects: ProjectView[];
+}) {
     const swiperRef = useRef<SwiperInstance | null>(null);
     const [activeIndex, setActiveIndex] = useState<number>(0);
 

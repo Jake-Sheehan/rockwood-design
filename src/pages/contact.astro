@@ -89,20 +89,22 @@ if (Astro.request.method === 'POST') {
     }
 
     .contact-info-section {
-        padding-block: 2rem;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-        align-items: start;
-        justify-items: center;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        algin-items: center;
         text-align: center;
+        gap: 2rem;
+    }
 
-        @media (max-width: 1200px) {
-            grid-template-columns: 1fr;
+    @media (min-width: 768px) {
+        .contact-info-section {
+            flex-flow: row wrap;
+            justify-content: center;
         }
     }
 
     .contact-info {
-        flex-basis: 33%;
+        padding: 2rem;
     }
 </style>
