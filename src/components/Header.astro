@@ -71,23 +71,16 @@ import logoUrl from '@assets/rockwood-design-logo-2.png?url';
 <style>
     header {
         background-color: var(--color-surface-header);
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-template-rows: auto;
-        align-items: center;
-        grid-template-areas: 'logo nav';
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        algin-items: center;
         gap: 1rem;
         padding: 1rem 2rem;
         width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
+        position: fixed;
+        inset: 0 auto auto 0;
         z-index: 10000;
-    }
-
-    img {
-        grid-area: logo;
     }
 
     button[aria-controls='nav'] {
@@ -111,7 +104,6 @@ import logoUrl from '@assets/rockwood-design-logo-2.png?url';
     }
 
     nav {
-        grid-area: nav;
         display: grid;
         place-items: center;
         font-family: var(--ff-heading);
