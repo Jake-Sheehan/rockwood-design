@@ -41,5 +41,5 @@ a {
 
 a:hover,
 a:focus-visible {
-    color: var(--color-text-highlight);
+    color: var(--color-accent);
 }

@@ -32,7 +32,7 @@
     background-color: rgb(23 23 27 / 0.8);
     border-radius: var(--rounded);
     border: 2px solid var(--color-border);
-    padding: 1rem 1.5rem;
+    padding: 1.5rem 2rem;
     width: clamp(0px, 95%, 750px);
 }
 

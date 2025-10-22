@@ -12,6 +12,10 @@
     width: 1px;
 }
 
+.text-shadow {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.95);
+}
+
 .gradient-overlay {
     position: relative;
     display: block; /* or block, depending on layout */
