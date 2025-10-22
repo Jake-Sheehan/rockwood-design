@@ -42,7 +42,7 @@ const { title } = Astro.props;
 <style>
     body {
         display: grid;
-        grid-template-rows: auto 1fr auto;
+        grid-template-rows: 1fr auto;
         grid-template-columns: 1fr;
         grid-template-areas:
             'main'
@@ -69,10 +69,6 @@ const { title } = Astro.props;
         text-decoration: none;
         border-bottom-right-radius: var(--rounded-sm);
         text-transform: uppercase;
-    }
-
-    header {
-        grid-area: main;
     }
 
     main {
