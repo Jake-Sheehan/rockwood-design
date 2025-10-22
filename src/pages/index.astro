@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import ProjectSwiper from '@components/ProjectSwiper';
 import SubImage from '../assets/atlantic_ave2.webp';
 import LinkButton from '@components/buttons/LinkButton.astro';
+import ThematicBreak from '@components/ThematicBreak.astro';
 import { getFeaturedProjects } from 'src/lib';
 
 const projects = await getFeaturedProjects();
@@ -13,7 +14,9 @@ const projects = await getFeaturedProjects();
 
     <section class="subheading section wrapper">
         <div class="subheading-image">
-            <img src={SubImage.src} alt="subheading image" />
+            <div class="image-container">
+                <img src={SubImage.src} alt="subheading image" />
+            </div>
         </div>
         <div class="subheading-text">
             <h2>Trusted for over 35 years</h2>
@@ -25,14 +28,16 @@ const projects = await getFeaturedProjects();
                 seamless, efficient, and enjoyable experience from concept to
                 completion.
             </p>
-            <div class="learnButton">
-                <LinkButton href="/about">Learn More</LinkButton>
-            </div>
+            <LinkButton href="/about">Learn More</LinkButton>
         </div>
     </section>
 
-    <section class="map-section section wrapper">
-        <div class="map-text">
+    <section class="section wrapper">
+        <ThematicBreak />
+    </section>
+
+    <section class="subheading section wrapper">
+        <div class="subheading-text">
             <h2>Our Projects</h2>
             <p>
                 Explore our portfolio of architectural projects. Each point on
@@ -40,11 +45,14 @@ const projects = await getFeaturedProjects();
                 craftsmanship that defines our approach to building spaces that
                 endure.
             </p>
+            <LinkButton href="/portfolio">Explore Projects</LinkButton>
         </div>
-        <iframe
-            src="https://www.google.com/maps/d/embed?mid=12AERk8C8fTaJElpMLewfFXcJ-R_1XiI&ehbc=2E312F&noprof=1"
-            width="640"
-            height="480"></iframe>
+        <div class="subheading-image">
+            <iframe
+                src="https://www.google.com/maps/d/embed?mid=12AERk8C8fTaJElpMLewfFXcJ-R_1XiI&ehbc=2E312F&noprof=1"
+                width="600"
+                height="300"></iframe>
+        </div>
     </section>
 </Layout>
 
@@ -62,18 +70,19 @@ const projects = await getFeaturedProjects();
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 1rem;
-
-            @media (min-width: 1200px) {
-                .learnButton {
-                    align-self: flex-end;
-                }
-            }
+            gap: 1.5rem;
         }
 
         .subheading-image {
-            max-inline-size: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .image-container {
             border-radius: var(--rounded);
+            max-inline-size: 450px;
 
             img {
                 border-radius: var(--rounded);
@@ -84,26 +93,18 @@ const projects = await getFeaturedProjects();
     @media (min-width: 1200px) {
         .subheading {
             flex-direction: row;
+            gap: 5%;
+        }
+
+        .subheading-image,
+        .subheading-text {
+            flex-basis: 47.5%;
         }
     }
 
-    .map-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-
-        @media (min-width: 1200px) {
-            flex-direction: row;
-            gap: 2rem;
-        }
-    }
-
-    .map-section iframe {
-        max-width: 100%;
-        aspect-ratio: 16 / 9;
-        border: none;
-        margin: 1.5rem;
+    iframe {
+        height: 100%;
+        width: 100%;
+        aspect-ratio: 4 / 3;
     }
 </style>

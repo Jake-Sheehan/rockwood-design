@@ -62,46 +62,51 @@ export default function ProjectSwiper({
                 </Swiper>
             </div>
 
-            <div className={styles.myControls}>
-                <button
-                    className={styles.arrowButton}
-                    type="button"
-                    onClick={() => swiperRef.current?.slidePrev()}
-                >
-                    <CaretLeftIcon color="#f2f2f2" size={24} />
-                </button>
+            <div className={styles.infoSection}>
+                <h1 className={`${styles.title} text-shadow`}>
+                    Rockwood Design
+                </h1>
+                <div className={styles.myControls}>
+                    <button
+                        className={styles.arrowButton}
+                        type="button"
+                        onClick={() => swiperRef.current?.slidePrev()}
+                    >
+                        <CaretLeftIcon color="#f2f2f2" size={24} />
+                    </button>
 
-                <div className={styles.projectInfo}>
-                    <h4 className={styles.projectTitle}>
-                        {projects[activeIndex]?.title ?? 'project title'}
-                    </h4>
-                    <p className={styles.description}>
-                        {projects[activeIndex].summary}
-                    </p>
-                    {projects[activeIndex]?.slug ? (
-                        <a
-                            className={styles.viewProjectButton}
-                            href={`/projects/${projects[activeIndex].slug}`}
-                        >
-                            <p className={styles.learnMore}>
-                                Learn More
-                                <span className={styles.rightArrow}>
-                                    &rarr;
-                                </span>
-                            </p>
-                        </a>
-                    ) : (
-                        <span />
-                    )}
+                    <div className={styles.projectInfo}>
+                        <h4 className={styles.projectTitle}>
+                            {projects[activeIndex]?.title ?? 'project title'}
+                        </h4>
+                        <p className={styles.description}>
+                            {projects[activeIndex].summary}
+                        </p>
+                        {projects[activeIndex]?.slug ? (
+                            <a
+                                className={styles.viewProjectButton}
+                                href={`/projects/${projects[activeIndex].slug}`}
+                            >
+                                <p className={styles.learnMore}>
+                                    Learn More
+                                    <span className={styles.rightArrow}>
+                                        &rarr;
+                                    </span>
+                                </p>
+                            </a>
+                        ) : (
+                            <span />
+                        )}
+                    </div>
+
+                    <button
+                        className={styles.arrowButton}
+                        type="button"
+                        onClick={() => swiperRef.current?.slideNext()}
+                    >
+                        <CaretRightIcon color="#f2f2f2" size={24} />
+                    </button>
                 </div>
-
-                <button
-                    className={styles.arrowButton}
-                    type="button"
-                    onClick={() => swiperRef.current?.slideNext()}
-                >
-                    <CaretRightIcon color="#f2f2f2" size={24} />
-                </button>
             </div>
         </section>
     );
