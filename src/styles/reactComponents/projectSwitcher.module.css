@@ -15,7 +15,7 @@
 }
 
 .mySwiperContainer {
-    block-size: 60dvh;
+    block-size: max(60dvh, 400px);
     inline-size: 100%;
 }
 
