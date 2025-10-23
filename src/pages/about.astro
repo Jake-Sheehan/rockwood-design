@@ -24,7 +24,7 @@ import HeroImage from '../assets/lafayette.webp';
         <div class="person-image">
             <PersonImage
                 name="Richard (Dick) Rockwood"
-                imageUrl="https://picsum.photos/1920/1080?random=1"
+                imageUrl={HeroImage.src}
             />
         </div>
         <div class="person-text">
@@ -46,10 +46,7 @@ import HeroImage from '../assets/lafayette.webp';
 
     <section class="person-section section wrapper">
         <div class="person-image">
-            <PersonImage
-                imageUrl="https://picsum.photos/1920/1080?random=1"
-                name="Phillip Baker"
-            />
+            <PersonImage imageUrl={HeroImage.src} name="Phillip Baker" />
         </div>
         <div class="person-text">
             <h3>Phillip Baker</h3>
