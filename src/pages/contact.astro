@@ -5,6 +5,7 @@ import Layout from '@layouts/Layout.astro';
 import ContactForm from '@components/ContactForm.astro';
 import PrimaryCard from '@components/cards/PrimaryCard.astro';
 import PageHero from '@components/PageHero.astro';
+import HeroImage from '../assets/wellfleet.webp';
 
 let formSubmitted: boolean = false;
 let resultMessage;
@@ -35,10 +36,7 @@ if (Astro.request.method === 'POST') {
 ---
 
 <Layout title="Contact">
-    <PageHero
-        imageUrl="https://picsum.photos/1920/1080?random=2"
-        title="Contact Us"
-    >
+    <PageHero imageUrl={HeroImage.src} title="Contact Us">
         <p>
             We have worked on thousands of projects from small remodels to full
             scale designs. We'd love to hear more about your project and set up

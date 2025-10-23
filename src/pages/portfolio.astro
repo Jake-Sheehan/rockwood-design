@@ -3,13 +3,14 @@ import Layout from '@layouts/Layout.astro';
 import Grid from '@components/Grid.astro';
 import ProjectThumb from '@components/ProjectThumb.astro';
 import HeroImage from '@components/HeroImage.astro';
+import HeroPicture from '../assets/harwich.webp';
 import { getAllProjects, urlFor } from '../lib.ts';
 
 const projects = await getAllProjects();
 ---
 
 <Layout title="Portfolio">
-    <HeroImage imageUrl="https://picsum.photos/1920/1080" />
+    <HeroImage imageUrl={HeroPicture.src} />
     <section class="portfolio-section section wrapper">
         <h2 class="page-title text-shadow">Explore Our Projects</h2>
         <Grid>

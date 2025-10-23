@@ -3,13 +3,11 @@ import Layout from '@layouts/Layout.astro';
 import PageHero from '@components/PageHero.astro';
 import PersonImage from '@components/PersonImage.astro';
 import ThematicBreak from '@components/ThematicBreak.astro';
+import HeroImage from '../assets/lafayette.webp';
 ---
 
 <Layout title="About">
-    <PageHero
-        imageUrl="https://picsum.photos/1920/1080?random=2"
-        title="About Us"
-    >
+    <PageHero imageUrl={HeroImage.src} title="About Us">
         <p>
             Rockwood Design, Inc. is a premier residential design firm with over
             35 years of hands-on experience in crafting distinctive and

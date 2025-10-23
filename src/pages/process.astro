@@ -2,13 +2,11 @@
 import Layout from '@layouts/Layout.astro';
 import PageHero from '@components/PageHero.astro';
 import ThematicBreak from '@components/ThematicBreak.astro';
+import HeroImage from '../assets/king-caesar.webp';
 ---
 
 <Layout title="Process">
-    <PageHero
-        imageUrl="https://picsum.photos/1920/1080?random=2"
-        title="Our Process"
-    >
+    <PageHero imageUrl={HeroImage.src} title="Our Process">
         <p>
             Exceptional design begins with a clear vision. One of the most
             rewarding aspects of our process is collaborating with clients to
