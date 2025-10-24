@@ -28,7 +28,7 @@ export default defineType({
             type: 'text',
             rows: 3,
             description: 'Short description used on project cards or previews.',
-            validation: (Rule) => Rule.required().max(280),
+            validation: (Rule) => Rule.max(280),
         }),
 
         defineField({

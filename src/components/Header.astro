@@ -101,6 +101,11 @@ import logoUrl from '@assets/rockwood-design-logo-2.png?url';
 
     a {
         font-family: var(--ff-nav);
+        text-decoration: none;
+
+        @media (width < 1200px) {
+            padding: 1rem;
+        }
     }
 
     nav {
@@ -155,9 +160,5 @@ import logoUrl from '@assets/rockwood-design-logo-2.png?url';
                 display: block;
             }
         }
-    }
-
-    a {
-        text-decoration: none;
     }
 </style>
