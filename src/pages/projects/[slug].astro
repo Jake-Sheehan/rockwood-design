@@ -5,7 +5,7 @@ import { getProjectBySlug, getAllProjects, urlFor } from '../../lib.ts';
 import Layout from '@layouts/Layout.astro';
 import ThematicBreak from '@components/ThematicBreak.astro';
 import LinkButton from '@components/buttons/LinkButton.astro';
-import Grid from '@components/Grid.astro';
+import ImageGrid from '@components/ImageGrid.astro';
 import type { Project } from '../../../sanity.types';
 
 export async function getStaticPaths() {
@@ -62,7 +62,7 @@ function srcsetFor(img: GalleryImage) {
     </section>
 
     <section class="gallery section wrapper">
-        <Grid>
+        <ImageGrid>
             {
                 project?.gallery?.map((image) => {
                     const src = urlFor(image).width(320).auto('format').url();
@@ -88,7 +88,7 @@ function srcsetFor(img: GalleryImage) {
                     );
                 })
             }
-        </Grid>
+        </ImageGrid>
     </section>
 </Layout>
 
@@ -179,7 +179,7 @@ function srcsetFor(img: GalleryImage) {
         outline: 1px solid rgb(255 255 255 / 0.06);
         aspect-ratio: 4 / 3; /* use 1/1 for square, 3/2 for wider */
         background: #111;
-        max-width: 300px;
+        max-width: 280px;
     }
     .thumb img {
         width: 100%;

@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import Grid from '@components/Grid.astro';
+import ImageGrid from '@components/ImageGrid.astro';
 import ProjectThumb from '@components/ProjectThumb.astro';
 import HeroImage from '@components/HeroImage.astro';
 import HeroPicture from '../assets/harwich.webp';
@@ -13,7 +13,7 @@ const projects = await getAllProjects();
     <HeroImage imageUrl={HeroPicture.src} />
     <section class="portfolio-section section wrapper">
         <h2 class="page-title text-shadow">Explore Our Projects</h2>
-        <Grid>
+        <ImageGrid>
             {
                 projects.map((project) => (
                     <ProjectThumb
@@ -30,7 +30,7 @@ const projects = await getAllProjects();
                     />
                 ))
             }
-        </Grid>
+        </ImageGrid>
     </section>
 </Layout>
 
